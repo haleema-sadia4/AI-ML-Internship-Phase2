@@ -28,8 +28,27 @@ RAG chatbots, and LLM applications.
 **Tools:** Hugging Face Transformers, Gradio, Google Colab (T4 GPU)
 
 ---
+## Task 2 — End-to-End ML Pipeline for Customer Churn ✅
 
-## Task 2 — Coming soon
-## Task 3 — Coming soon
-## Task 4 — Coming soon
-## Task 5 — Coming soon
+**Objective:** Build a production-ready ML pipeline to predict 
+customer churn for a telecom company.
+
+**Dataset:** IBM Telco Customer Churn (7,032 customers, 19 features)
+
+**Approach:**
+- Fixed hidden missing values in TotalCharges column
+- Built ColumnTransformer handling numerical + categorical columns
+- Chained preprocessing + model into one sklearn Pipeline
+- Compared Logistic Regression vs Random Forest
+- Used GridSearchCV (40 runs) to find optimal settings
+- Exported final pipeline using joblib
+
+**Results:**
+
+| Model | Accuracy | Churned F1 |
+|-------|----------|------------|
+| Logistic Regression | 80% | 0.61 |
+| Random Forest | 79% | 0.55 |
+| Best (GridSearch) | 80% | 0.61 |
+
+**Tools:** Scikit-learn Pipeline, GridSearchCV, joblib, Pandas
