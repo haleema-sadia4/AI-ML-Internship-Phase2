@@ -52,3 +52,32 @@ customer churn for a telecom company.
 | Best (GridSearch) | 80% | 0.61 |
 
 **Tools:** Scikit-learn Pipeline, GridSearchCV, joblib, Pandas
+
+## Task 3 — Multimodal Housing Price Prediction (CNN + Tabular) ✅
+
+**Objective:** Predict house prices using both property images and 
+structured tabular data (bedrooms, bathrooms, area).
+
+**Dataset:** Houses Dataset (Ahmed & Moustafa) — 535 houses with 
+frontal images + tabular features
+
+**Approach:**
+- Extracted visual features using pre-trained MobileNetV2 (transfer learning)
+- Processed tabular features through dense layers
+- Fused both feature sets via concatenation
+- Identified model collapse issue (predicting near-constant values)
+- Fixed by scaling target variable — improved MAE by 51%
+- Evaluated using MAE and RMSE, visualized actual vs predicted
+
+**Results:**
+
+| Version | MAE | RMSE |
+|---------|-----|------|
+| Without target scaling | $432,844 | $558,585 |
+| With target scaling | $213,224 | $305,968 |
+
+**Key insight:** Model performs best on mid-range houses ($400K-$800K), 
+tends to regress toward the mean for very cheap or very expensive 
+properties — a common limitation with small datasets (428 training examples).
+
+**Tools:** TensorFlow/Keras, MobileNetV2, Scikit-learn, Pandas
