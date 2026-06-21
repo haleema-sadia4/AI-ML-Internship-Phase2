@@ -81,3 +81,38 @@ tends to regress toward the mean for very cheap or very expensive
 properties — a common limitation with small datasets (428 training examples).
 
 **Tools:** TensorFlow/Keras, MobileNetV2, Scikit-learn, Pandas
+
+## Task 4 — Context-Aware Chatbot Using RAG ✅
+
+**Objective:** Build a conversational chatbot that remembers context 
+and retrieves answers from a custom knowledge document.
+
+**Knowledge base:** Custom AI overview document (history, applications, 
+ethics, machine learning, NLP, computer vision)
+
+**Approach:**
+- Split document into chunks using RecursiveCharacterTextSplitter
+- Generated embeddings using Google's gemini-embedding-001 model
+- Built a FAISS vector store for semantic similarity search
+- Implemented conversational memory to handle follow-up questions
+- Diagnosed and resolved free-tier API rate limiting by building a 
+  lightweight custom retrieval function (reduced API calls per 
+  question from ~5 to 2)
+- Deployed as an interactive chatbot using Gradio
+
+**Demonstrated capabilities:**
+
+| Question | Tests |
+|----------|-------|
+| "What is AI?" | Basic RAG retrieval |
+| "What are some applications of it?" | Pronoun resolution via memory ("it" = AI) |
+| "Can you give an example from what you just mentioned?" | Multi-turn memory across 2+ exchanges |
+
+**Key insight:** LangChain's default ConversationalRetrievalChain makes 
+multiple embedding calls per question (question reformulation + 
+retrieval), which exhausted free-tier API quota. Rebuilt a leaner 
+manual RAG pipeline (1 retrieval + 1 generation call) that preserved 
+full functionality while working within free-tier limits.
+
+**Tools:** LangChain, Google Gemini API (gemini-2.5-flash), 
+FAISS vector store, Gradio
