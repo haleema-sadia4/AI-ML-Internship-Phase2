@@ -5,7 +5,7 @@ RAG chatbots, and LLM applications.
 
 ---
 
-## Task 1 — News Topic Classifier Using BERT ✅
+## Task 1 — News Topic Classifier Using BERT 
 
 **Objective:** Fine-tune BERT to classify news headlines into 4 categories.
 
@@ -28,7 +28,7 @@ RAG chatbots, and LLM applications.
 **Tools:** Hugging Face Transformers, Gradio, Google Colab (T4 GPU)
 
 ---
-## Task 2 — End-to-End ML Pipeline for Customer Churn ✅
+## Task 2 — End-to-End ML Pipeline for Customer Churn 
 
 **Objective:** Build a production-ready ML pipeline to predict 
 customer churn for a telecom company.
@@ -53,7 +53,7 @@ customer churn for a telecom company.
 
 **Tools:** Scikit-learn Pipeline, GridSearchCV, joblib, Pandas
 
-## Task 3 — Multimodal Housing Price Prediction (CNN + Tabular) ✅
+## Task 3 — Multimodal Housing Price Prediction (CNN + Tabular) 
 
 **Objective:** Predict house prices using both property images and 
 structured tabular data (bedrooms, bathrooms, area).
@@ -82,7 +82,7 @@ properties — a common limitation with small datasets (428 training examples).
 
 **Tools:** TensorFlow/Keras, MobileNetV2, Scikit-learn, Pandas
 
-## Task 4 — Context-Aware Chatbot Using RAG ✅
+## Task 4 — Context-Aware Chatbot Using RAG 
 
 **Objective:** Build a conversational chatbot that remembers context 
 and retrieves answers from a custom knowledge document.
